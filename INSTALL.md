@@ -51,14 +51,14 @@ including the option characters and the accent dead keys, stays where it was.
 
 ## Linux
 
-Three ways in. The first two install the same file and behave the same; pick
+Three methods. The first two install the same file and behave the same; pick
 whichever input framework your desktop already runs.
 
 | | choose this if |
 | --- | --- |
 | [ibus](#ibus) | you run GNOME, or you do not know what you run |
 | [fcitx5](#fcitx5) | you already run fcitx5, or you run KDE |
-| [the fcitx5 addon](#the-fcitx5-addon) | you are me |
+| [the fcitx5 addon](#the-fcitx5-addon) | you are drdilyor |
 
 ### ibus
 
