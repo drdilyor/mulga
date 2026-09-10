@@ -1,0 +1,8 @@
+[Addon]
+Name=Mulga
+Category=InputMethod
+Version=@PROJECT_VERSION@
+Library=mulga
+Type=SharedLibrary
+OnDemand=True
+Configurable=False

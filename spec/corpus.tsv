@@ -1,0 +1,32 @@
+# Shared conformance corpus: what you type -> what the client receives.
+# Read by test/e2e/drive.py (fcitx5 addon and .mim) and by
+# test/keylayout/simulate.py (macOS). One tab between the columns.
+#
+# Rows whose input a target cannot produce are skipped by that target and
+# counted, rather than quietly passing. The macOS layout can only type the
+# ASCII apostrophe and backtick, so the exotic tutuq belgisi rows below are
+# skipped there and exercised only on Linux.
+shahar	şahar
+choy	çoy
+o'zbek	özbek
+g'alaba	ǧalaba
+Shahar	Şahar
+SHAHAR	ŞAHAR
+Choy	Çoy
+CHOY	ÇOY
+O'zbekiston	Özbekiston
+G'ALABA	ǦALABA
+sHahar	sHahar
+ishchi	işçi
+tosh	toş
+o'qish	öqiş
+g'isht	ǧişt
+cho'chish	çöçiş
+as'hob	as'hob
+ming	ming
+o`zbek	özbek
+g`alaba	ǧalaba
+oʻzbek	özbek
+o’zbek	özbek
+gʼalaba	ǧalaba
+school	sçool

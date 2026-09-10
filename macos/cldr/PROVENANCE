@@ -1,0 +1,9 @@
+Vendored from CLDR release-41, unicode-org/cldr, keyboards/osx/:
+
+  en-t-k0-osx.xml   the macOS U.S. layout: every key, in all eight modifier
+                    combinations, plus the layout's own dead keys
+  _platform.xml     ISO key position <-> macOS virtual key code
+
+Used by tools/gen_keylayout.py so the base layer of our layout is taken from
+published data rather than from anyone's memory of where the keys are. Unicode
+licence; see https://www.unicode.org/copyright.html
