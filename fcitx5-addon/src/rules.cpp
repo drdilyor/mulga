@@ -101,9 +101,9 @@ std::string_view combine(uint32_t first, uint32_t second) {
     case 'O':
         return isApostrophe(second) ? "Ö" : "";
     case 'g':
-        return isApostrophe(second) ? "ǧ" : "";
+        return isApostrophe(second) ? "ğ" : "";
     case 'G':
-        return isApostrophe(second) ? "Ǧ" : "";
+        return isApostrophe(second) ? "Ğ" : "";
     default:
         return "";
     }

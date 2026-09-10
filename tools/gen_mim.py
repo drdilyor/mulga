@@ -35,7 +35,7 @@ APOSTROPHES = [
 ]
 
 DIGRAPHS = [("s", "S", "ş", "Ş"), ("c", "C", "ç", "Ç")]
-APOS_LETTERS = [("o", "O", "ö", "Ö"), ("g", "G", "ǧ", "Ǧ")]
+APOS_LETTERS = [("o", "O", "ö", "Ö"), ("g", "G", "ğ", "Ğ")]
 
 
 def key_names(ch):
@@ -54,7 +54,7 @@ def main():
     w = L.append
     w(";; uz-Mulga.mim : the reformed Uzbek Latin alphabet")
     w(";;")
-    w(";;   sh -> ş    ch -> ç    o' -> ö    g' -> ǧ")
+    w(";;   sh -> ş    ch -> ç    o' -> ö    g' -> ğ")
     w(";;")
     w(";; Built like latn-post.mim: a plain sequence table. m17n holds a key")
     w(";; only for as long as it is the prefix of some rule, so `s` followed by")
@@ -68,7 +68,7 @@ def main():
     w("(input-method uz Mulga)")
     w("")
     w('(description "Reformed Uzbek Latin alphabet. Type sh, ch, o\' or g\' '
-      'and it folds into ş, ç, ö or ǧ.")')
+      'and it folds into ş, ç, ö or ğ.")')
     w("")
     w('(title "UZ")')
     w("")

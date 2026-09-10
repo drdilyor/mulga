@@ -82,13 +82,13 @@
       # the opposite of what the input methods do, and at the opposite end.
       # The text stays reformed; only the picture of it says sh, ch, oʻ, gʻ.
       #
-      # `font/default.nix` will do this to any font package; DejaVu is the one
-      # built here because it carries all four letters, ǧ included, which a
-      # surprising number of fonts do not. Building it runs the shaping tests
-      # over every face that comes out.
+      # `font/default.nix` will do this to any font package; DejaVu is the
+      # one built here because it carries all four letters across every text
+      # face. Building it runs the shaping tests over every face that comes
+      # out.
       font = pkgs.callPackage ./font { } {
         font = pkgs.dejavu_fonts;
-        # Not a text font, and the one face in the package with no ǧ.
+        # A maths font, not a text one: nothing to read in it.
         exclude = [ "MathTeXGyre" ];
       };
 

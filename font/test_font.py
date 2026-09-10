@@ -29,7 +29,7 @@ CASES = [
     ("şahar", "shahar"),
     ("çoy", "choy"),
     ("özbek", f"o{TUTUQ}zbek"),
-    ("ǧalaba", f"g{TUTUQ}alaba"),
+    ("ğalaba", f"g{TUTUQ}alaba"),
 
     # Capitals follow the neighbours, exactly as the input methods decide them.
     ("Şahar", "Shahar"),
@@ -37,7 +37,7 @@ CASES = [
     ("Çoy", "Choy"),
     ("ÇOY", "CHOY"),
     ("Özbekiston", f"O{TUTUQ}zbekiston"),
-    ("ǦALABA", f"G{TUTUQ}ALABA"),
+    ("ĞALABA", f"G{TUTUQ}ALABA"),
 
     # A capital at the end of a word in capitals is led into, not followed.
     ("toş", "tosh"),
@@ -51,7 +51,7 @@ CASES = [
     # More than one rule in a word.
     ("işçi", "ishchi"),
     ("öqiş", f"o{TUTUQ}qish"),
-    ("ǧişt", f"g{TUTUQ}isht"),
+    ("ğişt", f"g{TUTUQ}isht"),
     ("çöçiş", f"cho{TUTUQ}chish"),
 
     # Left alone: ng, a literal apostrophe, and text with none of the four.
@@ -101,9 +101,9 @@ def check_shaping(path, log):
     belgisi = drawn("ö")[1:] or TUTUQ
 
     # A base font that has no glyph for a reformed letter cannot be made to
-    # spell it, and ǧ is missing often enough to be worth saying so plainly
+    # spell it, and ğ is missing often enough to be worth saying so plainly
     # rather than reporting it as a failure of the patch.
-    missing = {c for c in "şŞçÇöÖǧǦ" if drawn(c) == c}
+    missing = {c for c in "şŞçÇöÖğĞ" if drawn(c) == c}
 
     failures = 0
     for sent, want in CASES:

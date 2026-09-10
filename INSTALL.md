@@ -7,7 +7,7 @@ Uzbek now writes four of its digraphs as single letters:
 | `sh` | `ş` |
 | `ch` | `ç` |
 | `o'` | `ö` |
-| `g'` | `ǧ` |
+| `g'` | `ğ` |
 
 Nothing ships a keyboard for that yet. Mulga is one. You type `sh` exactly as
 you always have and `ş` is what comes out — no new keys to learn, no key you

@@ -106,7 +106,7 @@ runCommand
     for face in "$@"; do
       name=$(basename "$face")
       patched=$dir/''${name%.*}-${slug}.''${name##*.}
-      # A face the patcher had to skip -- no ş, ç, ö or ǧ in it, which is
+      # A face the patcher had to skip -- no ş, ç, ö or ğ in it, which is
       # what a symbol font in the same package looks like -- has nothing
       # there to check.
       if [ -e "$patched" ]; then pairs+=("$patched=$face"); fi

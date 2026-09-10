@@ -8,7 +8,7 @@ digraphs fold into single letters as you type them.
 | `sh` | `ş` | `shahar` → `şahar` |
 | `ch` | `ç` | `choy` → `çoy` |
 | `o'` | `ö` | `o'zbek` → `özbek` |
-| `g'` | `ǧ` | `g'alaba` → `ǧalaba` |
+| `g'` | `ğ` | `g'alaba` → `ğalaba` |
 
 `ng` is left alone.
 
@@ -175,10 +175,10 @@ font so that reformed text draws in the old spelling:
 | `şahar` | `shahar` |
 | `çoy` | `choy` |
 | `özbek` | `oʻzbek` |
-| `ǧalaba` | `gʻalaba` |
+| `ğalaba` | `gʻalaba` |
 
 Nothing about the text changes. Select it, copy it, search it, and it is still
-ş, ç, ö and ǧ -- one character that happens to be drawn as two. So the same
+ş, ç, ö and ğ -- one character that happens to be drawn as two. So the same
 file can be written in the reformed alphabet and handed to someone who has to
 read, print or submit it in the official one.
 
@@ -192,7 +192,7 @@ drops GPOS outright. That is pinned in the tests.
 
 Capitals follow the same rule as the input methods, from the other side, so
 `Şahar` draws as `Shahar` and `ŞAHAR` as `SHAHAR`: a capital spells itself SH
-next to another capital and Sh otherwise. `ö` and `ǧ` need none of that, the
+next to another capital and Sh otherwise. `ö` and `ğ` need none of that, the
 tutuq belgisi having no case.
 
 ```sh
@@ -247,12 +247,13 @@ cells, and a terminal that has allotted it one will draw it over the character
 after it. The mono faces are patched for completeness; the proportional ones
 are the ones to use.
 
-The base font has to carry the letters. ş, ç and ö are in almost everything,
-since Turkish and German are; ǧ (U+01E7) is not -- IBM Plex Sans has no glyph
-for it. A shaper faced with that decomposes the letter into g and a combining
-caron before any font rule runs, and the patch catches that shape too, so ǧ
-still draws as gʻ. Where a font is missing a letter outright the rule is
-skipped rather than the font refused, and `--print-rules` says which.
+The base font has to carry the letters, and all four are widely available:
+ş, ç, ö and ğ are the letters Turkish and German need, so most text faces have
+them. A font that is missing one is still patched for the rest -- the rule is
+skipped rather than the font refused, and `--print-rules` says which. Text can
+also arrive decomposed, as a base letter followed by a combining mark, either
+because it was normalised that way or because the shaper took a letter the font
+could not draw apart; the patch matches that shape too.
 
 ## Development
 

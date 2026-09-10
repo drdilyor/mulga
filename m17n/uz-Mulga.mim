@@ -1,6 +1,6 @@
 ;; uz-Mulga.mim : the reformed Uzbek Latin alphabet
 ;;
-;;   sh -> ş    ch -> ç    o' -> ö    g' -> ǧ
+;;   sh -> ş    ch -> ç    o' -> ö    g' -> ğ
 ;;
 ;; Built like latn-post.mim: a plain sequence table. m17n holds a key
 ;; only for as long as it is the prefix of some rule, so `s` followed by
@@ -13,7 +13,7 @@
 
 (input-method uz Mulga)
 
-(description "Reformed Uzbek Latin alphabet. Type sh, ch, o' or g' and it folds into ş, ç, ö or ǧ.")
+(description "Reformed Uzbek Latin alphabet. Type sh, ch, o' or g' and it folds into ş, ç, ö or ğ.")
 
 (title "UZ")
 
@@ -27,19 +27,19 @@
 
   ;; o' and g'. One row per shape the tutuq belgisi can arrive as, and
   ;; per name fcitx5-m17n might give it.
-  ("o'" "ö") ("O'" "Ö") ("g'" "ǧ") ("G'" "Ǧ")   ; U+0027 APOSTROPHE
-  ("o`" "ö") ("O`" "Ö") ("g`" "ǧ") ("G`" "Ǧ")   ; U+0060 GRAVE ACCENT
-  ((?o U+00B4) "ö") ((?O U+00B4) "Ö") ((?g U+00B4) "ǧ") ((?G U+00B4) "Ǧ")   ; U+00B4 ACUTE ACCENT as U+00B4
-  ((?o acute) "ö") ((?O acute) "Ö") ((?g acute) "ǧ") ((?G acute) "Ǧ")   ; U+00B4 ACUTE ACCENT as acute
-  ((?o U+02B9) "ö") ((?O U+02B9) "Ö") ((?g U+02B9) "ǧ") ((?G U+02B9) "Ǧ")   ; U+02B9 MODIFIER LETTER PRIME as U+02B9
-  ((?o U+02BB) "ö") ((?O U+02BB) "Ö") ((?g U+02BB) "ǧ") ((?G U+02BB) "Ǧ")   ; U+02BB MODIFIER LETTER TURNED COMMA as U+02BB
-  ((?o U+02BC) "ö") ((?O U+02BC) "Ö") ((?g U+02BC) "ǧ") ((?G U+02BC) "Ǧ")   ; U+02BC MODIFIER LETTER APOSTROPHE as U+02BC
-  ((?o U+2018) "ö") ((?O U+2018) "Ö") ((?g U+2018) "ǧ") ((?G U+2018) "Ǧ")   ; U+2018 LEFT SINGLE QUOTATION MARK as U+2018
-  ((?o leftsinglequotemark) "ö") ((?O leftsinglequotemark) "Ö") ((?g leftsinglequotemark) "ǧ") ((?G leftsinglequotemark) "Ǧ")   ; U+2018 LEFT SINGLE QUOTATION MARK as leftsinglequotemark
-  ((?o U+2019) "ö") ((?O U+2019) "Ö") ((?g U+2019) "ǧ") ((?G U+2019) "Ǧ")   ; U+2019 RIGHT SINGLE QUOTATION MARK as U+2019
-  ((?o rightsinglequotemark) "ö") ((?O rightsinglequotemark) "Ö") ((?g rightsinglequotemark) "ǧ") ((?G rightsinglequotemark) "Ǧ")   ; U+2019 RIGHT SINGLE QUOTATION MARK as rightsinglequotemark
-  ((?o U+2032) "ö") ((?O U+2032) "Ö") ((?g U+2032) "ǧ") ((?G U+2032) "Ǧ")   ; U+2032 PRIME as U+2032
-  ((?o minutes) "ö") ((?O minutes) "Ö") ((?g minutes) "ǧ") ((?G minutes) "Ǧ")   ; U+2032 PRIME as minutes
+  ("o'" "ö") ("O'" "Ö") ("g'" "ğ") ("G'" "Ğ")   ; U+0027 APOSTROPHE
+  ("o`" "ö") ("O`" "Ö") ("g`" "ğ") ("G`" "Ğ")   ; U+0060 GRAVE ACCENT
+  ((?o U+00B4) "ö") ((?O U+00B4) "Ö") ((?g U+00B4) "ğ") ((?G U+00B4) "Ğ")   ; U+00B4 ACUTE ACCENT as U+00B4
+  ((?o acute) "ö") ((?O acute) "Ö") ((?g acute) "ğ") ((?G acute) "Ğ")   ; U+00B4 ACUTE ACCENT as acute
+  ((?o U+02B9) "ö") ((?O U+02B9) "Ö") ((?g U+02B9) "ğ") ((?G U+02B9) "Ğ")   ; U+02B9 MODIFIER LETTER PRIME as U+02B9
+  ((?o U+02BB) "ö") ((?O U+02BB) "Ö") ((?g U+02BB) "ğ") ((?G U+02BB) "Ğ")   ; U+02BB MODIFIER LETTER TURNED COMMA as U+02BB
+  ((?o U+02BC) "ö") ((?O U+02BC) "Ö") ((?g U+02BC) "ğ") ((?G U+02BC) "Ğ")   ; U+02BC MODIFIER LETTER APOSTROPHE as U+02BC
+  ((?o U+2018) "ö") ((?O U+2018) "Ö") ((?g U+2018) "ğ") ((?G U+2018) "Ğ")   ; U+2018 LEFT SINGLE QUOTATION MARK as U+2018
+  ((?o leftsinglequotemark) "ö") ((?O leftsinglequotemark) "Ö") ((?g leftsinglequotemark) "ğ") ((?G leftsinglequotemark) "Ğ")   ; U+2018 LEFT SINGLE QUOTATION MARK as leftsinglequotemark
+  ((?o U+2019) "ö") ((?O U+2019) "Ö") ((?g U+2019) "ğ") ((?G U+2019) "Ğ")   ; U+2019 RIGHT SINGLE QUOTATION MARK as U+2019
+  ((?o rightsinglequotemark) "ö") ((?O rightsinglequotemark) "Ö") ((?g rightsinglequotemark) "ğ") ((?G rightsinglequotemark) "Ğ")   ; U+2019 RIGHT SINGLE QUOTATION MARK as rightsinglequotemark
+  ((?o U+2032) "ö") ((?O U+2032) "Ö") ((?g U+2032) "ğ") ((?G U+2032) "Ğ")   ; U+2032 PRIME as U+2032
+  ((?o minutes) "ö") ((?O minutes) "Ö") ((?g minutes) "ğ") ((?G minutes) "Ğ")   ; U+2032 PRIME as minutes
 
   ;; Doubling escape, for borrowings that want a literal sh or ch. Left
   ;; off on purpose so this file behaves exactly like the fcitx5 addon;

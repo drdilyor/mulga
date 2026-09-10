@@ -1,5 +1,5 @@
 /*
- * The alphabet reform itself: sh -> ş, ch -> ç, o' -> ö, g' -> ǧ.
+ * The alphabet reform itself: sh -> ş, ch -> ç, o' -> ö, g' -> ğ.
  *
  * Deliberately free of fcitx headers so the tests can drive exactly the same
  * state machine the input method does.

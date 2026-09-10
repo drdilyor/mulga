@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """mulga_font.py -- show reformed Uzbek text in the old digraph spelling.
 
-    ş -> sh    ç -> ch    ö -> oʻ    ǧ -> gʻ
+    ş -> sh    ç -> ch    ö -> oʻ    ğ -> gʻ
 
 The input methods in this repo fold the digraphs into single letters as they
 are typed. This does the opposite, and does it at the last possible moment:
-the file still holds ş, ç, ö and ǧ, and only the picture on the screen says
+the file still holds ş, ç, ö and ğ, and only the picture on the screen says
 sh, ch, oʻ and gʻ. Select that text and copy it and the reformed letters are
 what land in the clipboard, because nothing about the text has changed -- one
 character is simply drawn as two.
@@ -22,7 +22,7 @@ GSUB and GPOS tables are left alone and appended to rather than rebuilt.
 
 Capitals follow the same rule as the input methods: the case of the second
 letter comes from the neighbours, so `Şahar` draws as `Shahar` and `ŞAHAR` as
-`SHAHAR`. `ö` and `ǧ` need none of that -- the tutuq belgisi has no case.
+`SHAHAR`. `ö` and `ğ` need none of that -- the tutuq belgisi has no case.
 
 Usage:
     mulga_font.py FONT... --out-dir DIR [--suffix NAME] [--apostrophe HEX]
@@ -46,7 +46,7 @@ REFORM = [
     (0x015F, 0x015E, "s", "h", "H"),  # ş Ş  -> sh SH
     (0x00E7, 0x00C7, "c", "h", "H"),  # ç Ç  -> ch CH
     (0x00F6, 0x00D6, "o", None, None),  # ö Ö -> oʻ Oʻ
-    (0x01E7, 0x01E6, "g", None, None),  # ǧ Ǧ -> gʻ Gʻ
+    (0x011F, 0x011E, "g", None, None),  # ğ Ğ -> gʻ Gʻ
 ]
 
 # U+02BB is the tutuq belgisi the old standard prescribed, so it is what the
@@ -114,12 +114,12 @@ def resolve(font, apostrophe=None):
             if here and head and tail_upper:
                 upper[here] = [head, tail_upper]
 
-        # ǧ is rare enough that plenty of fonts have no glyph for it, and a
-        # shaper faced with that decomposes the letter into g and a combining
-        # caron before any of this runs. Substituting the mark after its own
-        # base letter catches that, and catches text that simply arrives in
-        # NFD. It is only done for ö and ǧ: their second letter is the tutuq
-        # belgisi, which has no case, so no neighbour needs consulting.
+        # A shaper handed a letter the font has no glyph for decomposes it
+        # into a base and a combining mark before any of this runs, and text
+        # can simply arrive in NFD anyway. Substituting the mark after its own
+        # base letter catches both. It is only done for ö and ğ: their second
+        # letter is the tutuq belgisi, which has no case, so no neighbour needs
+        # consulting.
         if second is None:
             for cp in (lower_cp, upper_cp):
                 pieces = unicodedata.normalize("NFD", chr(cp))
@@ -132,7 +132,7 @@ def resolve(font, apostrophe=None):
                         shapes[shape] = base
 
     if not plain and not marks:
-        raise Unsupported("none of ş, ç, ö or ǧ are in the font")
+        raise Unsupported("none of ş, ç, ö or ğ are in the font")
     return plain, upper, marks, apos
 
 

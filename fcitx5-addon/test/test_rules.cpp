@@ -49,7 +49,7 @@ int main() {
         {"shahar", "şahar"},
         {"choy", "çoy"},
         {"o'zbek", "özbek"},
-        {"g'alaba", "ǧalaba"},
+        {"g'alaba", "ğalaba"},
 
         // Case follows the first letter of the digraph.
         {"Shahar", "Şahar"},
@@ -57,7 +57,7 @@ int main() {
         {"Choy", "Çoy"},
         {"CHOY", "ÇOY"},
         {"O'zbekiston", "Özbekiston"},
-        {"G'ALABA", "ǦALABA"},
+        {"G'ALABA", "ĞALABA"},
 
         // A lowercase letter followed by a capital H is not a digraph.
         {"sHahar", "sHahar"},
@@ -65,8 +65,8 @@ int main() {
         // Every apostrophe shape people actually end up with.
         {"oʻzbek", "özbek"},   // U+02BB, the prescribed tutuq belgisi
         {"o’zbek", "özbek"},   // U+2019, from word processors
-        {"gʼalaba", "ǧalaba"}, // U+02BC
-        {"g`alaba", "ǧalaba"}, // backtick
+        {"gʼalaba", "ğalaba"}, // U+02BC
+        {"g`alaba", "ğalaba"}, // backtick
 
         // The apostrophe separates s from h, so as'hob keeps its letters.
         {"as'hob", "as'hob"},
@@ -82,7 +82,7 @@ int main() {
         // Several digraphs in one word.
         {"ishchi", "işçi"},
         {"o'qish", "öqiş"},
-        {"g'isht", "ǧişt"},
+        {"g'isht", "ğişt"},
         {"cho'chish", "çöçiş"},
 
         // Text that has already been converted is left alone.
